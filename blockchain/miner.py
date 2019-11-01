@@ -29,7 +29,7 @@ def proof_of_work(last_proof):
     #  TODO: Your code here
     block_string = json.dumps(last_proof, sort_keys=True).encode()
     while valid_proof(block_string , proof) is False:
-        proof += random.getrandbits(32)
+        proof = random.getrandbits(32)
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
